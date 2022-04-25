@@ -5,7 +5,8 @@ const gameSchema = new mongoose.Schema({
     description: String,
     genre: [String],
     platform: String,
-    price: Number
+    price: Number,
+    img: String
 });
 
 module.exports = mongoose.model('Game', gameSchema);
