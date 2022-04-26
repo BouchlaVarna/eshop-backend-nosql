@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Game = require('../models/game');
-const fs = require('fs');
+const Cart = require('../models/cart')
 
+
+//GET
 exports.getHome = async (req, res) => {
     /*
     try{
@@ -29,5 +31,14 @@ exports.getHome = async (req, res) => {
             res.send(result);
         }
     }).limit(3).clone();
-   
+}
+
+//POST
+exports.postHome = async (req, res) => {
+    const newCart = new Cart({
+        items: []
+    });
+
+    const cart = await newCart.save();
+    res.send(cart._id);
 }
