@@ -13,7 +13,8 @@ mongoose.connect("mongodb+srv://admin:admin@main1db.vqmw4.mongodb.net/Main1DB?re
 
 //Route imports
 const indexRouter = require('./routes/index');
-const platformsRouter = require('./routes/platforms')
+const platformsRouter = require('./routes/platforms');
+const cartRouter = require('./routes/cart');
 
 //Middlewear
 app.use(express.static('img'));
@@ -24,5 +25,6 @@ app.use(cors())
 //Routes
 app.use(indexRouter)
 app.use(platformsRouter)
+app.use('/cart', cartRouter)
 
 app.listen(PORT);

@@ -42,9 +42,11 @@ exports.getNintendo = async (req, res) => {
     }).clone()
 }
 
-exports.postPlaystation = async (req, res) => {
+exports.postCart = async (req, res) => {
+    console.log(req.body.cartId)
+    console.log(req.body.itemId)
     await Cart.updateOne(
         { _id: req.body.cartId },
-        { $push: { items: req.body.name } }
+        { $push: { items: req.body.itemId } }
     )
 }
