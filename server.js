@@ -6,7 +6,7 @@ const PORT = 3001;
 const app = express();
 
 //DB connection
-mongoose.connect("mongodb+srv://admin:admin@main1db.vqmw4.mongodb.net/Main1DB?retryWrites=true&w=majority", { 
+mongoose.connect("mongodb+srv://admin:@main1db.vqmw4.mongodb.net/Main1DB?retryWrites=true&w=majority", { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
